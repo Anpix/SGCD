@@ -5,22 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 // @author Anpix
 
 @Entity
-public class Telefone implements Serializable {
+public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long numero;
-    @ManyToOne
-    private Categoria categoria;
+    private String endereco;
+    private int numero;
+    private int cep;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String pais;
+    private Pessoa desbravador;
+    
+    
+    
 
-    
-    
     public Long getId() {
         return id;
     }
@@ -29,25 +34,6 @@ public class Telefone implements Serializable {
         this.id = id;
     }
 
-    public Long getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Long numero) {
-        this.numero = numero;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -58,10 +44,10 @@ public class Telefone implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Telefone)) {
+        if (!(object instanceof Endereco)) {
             return false;
         }
-        Telefone other = (Telefone) object;
+        Endereco other = (Endereco) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -70,7 +56,7 @@ public class Telefone implements Serializable {
 
     @Override
     public String toString() {
-        return "{" + id + "," + numero + "}";
+        return "model.Endereco[ id=" + id + " ]";
     }
     
 }

@@ -6,6 +6,6 @@
 package model;
 
 
-public class Desbravador extends Pessoa {
-    
+public class Responsavel extends Pessoa {
+    private Desbravador desbravador;
 }

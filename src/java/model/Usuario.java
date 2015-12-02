@@ -5,22 +5,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 // @author Anpix
 
 @Entity
-public class Telefone implements Serializable {
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long numero;
-    @ManyToOne
-    private Categoria categoria;
+    private String login;
+    private String senha;
+    
 
-    
-    
     public Long getId() {
         return id;
     }
@@ -29,25 +26,6 @@ public class Telefone implements Serializable {
         this.id = id;
     }
 
-    public Long getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Long numero) {
-        this.numero = numero;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -58,10 +36,10 @@ public class Telefone implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Telefone)) {
+        if (!(object instanceof Usuario)) {
             return false;
         }
-        Telefone other = (Telefone) object;
+        Usuario other = (Usuario) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -70,7 +48,7 @@ public class Telefone implements Serializable {
 
     @Override
     public String toString() {
-        return "{" + id + "," + numero + "}";
+        return "model.Usuario[ id=" + id + " ]";
     }
     
 }
