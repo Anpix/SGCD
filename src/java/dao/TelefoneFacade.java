@@ -12,10 +12,11 @@ import model.Telefone;
 
 /**
  *
- * @author Anpix
+ * @author tavarerc
  */
 @Stateless
 public class TelefoneFacade extends AbstractFacade<Telefone> {
+
     @PersistenceContext(unitName = "SGCDPU")
     private EntityManager em;
 

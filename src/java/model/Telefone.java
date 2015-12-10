@@ -13,12 +13,14 @@ import javax.persistence.ManyToOne;
 public class Telefone implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long ddd;
     private Long numero;
     @ManyToOne
     private Categoria categoria;
-
+    @ManyToOne
+    private Membro membro;
     
     
     public Long getId() {
@@ -37,12 +39,28 @@ public class Telefone implements Serializable {
         this.numero = numero;
     }
 
+    public Long getDdd() {
+        return ddd;
+    }
+
+    public void setDdd(Long ddd) {
+        this.ddd = ddd;
+    }
+
     public Categoria getCategoria() {
         return categoria;
     }
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Membro getMembro() {
+        return membro;
+    }
+
+    public void setMembro(Membro membro) {
+        this.membro = membro;
     }
 
     

@@ -8,14 +8,14 @@ package dao;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import model.Email;
+import model.Membro;
 
 /**
  *
  * @author tavarerc
  */
 @Stateless
-public class EmailFacade extends AbstractFacade<Email> {
+public class MembroFacade extends AbstractFacade<Membro> {
 
     @PersistenceContext(unitName = "SGCDPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class EmailFacade extends AbstractFacade<Email> {
         return em;
     }
 
-    public EmailFacade() {
-        super(Email.class);
+    public MembroFacade() {
+        super(Membro.class);
     }
     
 }

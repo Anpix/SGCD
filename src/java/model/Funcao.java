@@ -1,28 +1,26 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-// @author Anpix
+// @author anpix
 
 @Entity
-public class Categoria implements Serializable {
+public class Funcao implements Serializable {
+
+    @OneToMany(mappedBy = "funcao")
+    private List<Membro> membros;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
-    
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 
     public Long getId() {
         return id;
@@ -30,6 +28,14 @@ public class Categoria implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
@@ -42,10 +48,10 @@ public class Categoria implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Categoria)) {
+        if (!(object instanceof Funcao)) {
             return false;
         }
-        Categoria other = (Categoria) object;
+        Funcao other = (Funcao) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -54,7 +60,7 @@ public class Categoria implements Serializable {
 
     @Override
     public String toString() {
-        return "{" + id + "," + descricao + "}";
+        return "model.Funcao[ id=" + id + " ]";
     }
     
 }

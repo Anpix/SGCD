@@ -3,26 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>SGCD</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <!--<link rel="stylesheet" href="styles.css" />-->
     </h:head>
     <h:body>
-        <p>Hello from Facelets</p>
-        <table border="0">
-            <thead>
-                <tr>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-
+        <h1>SGCD</h1>
+        <div class="menu">
+            <h2>Menu Principal</h2><br/>
+            <h:link outcome="/categoria/List" value="Categorias"/><br />
+            <h:link outcome="/email/List" value="Emails"/><br />
+            <h:link outcome="/endereco/List" value="Endereços"/><br />
+            <h:link outcome="/pessoa/List" value="Pessoas"/><br />
+            <h:link outcome="/telefone/List" value="Telefones"/><br />
+            <h:link outcome="/usuario/List" value="Usuarios"/>
+        </div>
+        <br />
+        <br />
+        <h:link outcome="/categoria/List" value="Show All Categoria Items"/>
+        <br />
+        <h:link outcome="/email/List" value="Show All Email Items"/>
+        <br />
+        <h:link outcome="/endereco/List" value="Show All Endereco Items"/>
+        <br />
+        <h:link outcome="/especialidade/List" value="Show All Especialidade Items"/>
+        <br />
+        <h:link outcome="/funcao/List" value="Show All Funcao Items"/>
+        <br />
+        <h:link outcome="/membro/List" value="Show All Membro Items"/>
+        <br />
+        <h:link outcome="/telefone/List" value="Show All Telefone Items"/>
     </h:body>
+
+
+
+
+
+
+
 </html>
 

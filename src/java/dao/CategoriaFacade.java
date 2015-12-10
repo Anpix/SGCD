@@ -12,10 +12,11 @@ import model.Categoria;
 
 /**
  *
- * @author Anpix
+ * @author tavarerc
  */
 @Stateless
 public class CategoriaFacade extends AbstractFacade<Categoria> {
+
     @PersistenceContext(unitName = "SGCDPU")
     private EntityManager em;
 

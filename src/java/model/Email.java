@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private String email;
@@ -23,7 +23,7 @@ public class Email implements Serializable {
     @Column(nullable = false)
     private Boolean principal;
     @ManyToOne
-    private Usuario usuario;
+    private Membro membro;
 
     public Long getId() {
         return id;
@@ -31,6 +31,38 @@ public class Email implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Boolean getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(Boolean principal) {
+        this.principal = principal;
+    }
+
+    public Membro getMembro() {
+        return membro;
+    }
+
+    public void setMembro(Membro membro) {
+        this.membro = membro;
     }
 
     @Override

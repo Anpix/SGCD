@@ -12,10 +12,11 @@ import model.Endereco;
 
 /**
  *
- * @author Anpix
+ * @author tavarerc
  */
 @Stateless
 public class EnderecoFacade extends AbstractFacade<Endereco> {
+
     @PersistenceContext(unitName = "SGCDPU")
     private EntityManager em;
 
