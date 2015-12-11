@@ -17,6 +17,8 @@ import javax.persistence.Temporal;
 public class Membro implements Serializable {
 
 
+
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,8 +44,10 @@ public class Membro implements Serializable {
     private List<Endereco> enderecos;
     @OneToMany(mappedBy = "membro")
     private List<Telefone> telefones;
-    
-    
+    @OneToMany(mappedBy = "membro")
+    private List<ProvaEspecialidade> provasEspecialidades;
+    @OneToMany(mappedBy = "instrutor")
+    private List<ProvaEspecialidade> instrucaoEspecialidades;
     
     public Long getId() {
         return id;
@@ -69,16 +73,16 @@ public class Membro implements Serializable {
         this.nascimento = nascimento;
     }
 
-    public Sexo getSexo() {
-        return sexo;
+    public String getSexo() {
+        return sexo.toString();
     }
 
     public void setSexo(Sexo sexo) {
         this.sexo = sexo;
     }
 
-    public EstadoCivil getEstadocivil() {
-        return estadocivil;
+    public String getEstadocivil() {
+        return estadocivil.toString();
     }
 
     public void setEstadocivil(EstadoCivil estadocivil) {
@@ -139,6 +143,14 @@ public class Membro implements Serializable {
 
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
+    }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
     

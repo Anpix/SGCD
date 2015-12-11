@@ -1,10 +1,12 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 // @author anpix
 
@@ -16,6 +18,9 @@ public class Especialidade implements Serializable {
     private Long id;
     private String codigo;
     private String titulo;
+    
+    @OneToMany(mappedBy = "especialidade")
+    private List<ProvaEspecialidade> provas;
     
     public Long getId() {
         return id;
