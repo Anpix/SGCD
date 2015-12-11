@@ -28,6 +28,7 @@ public class Membro implements Serializable {
     private Date nascimento;
     private Sexo sexo;
     private EstadoCivil estadocivil;
+    private TipoSanguineo tipoSanguineo;
     @ManyToOne
     private Funcao funcao;
     
@@ -151,6 +152,30 @@ public class Membro implements Serializable {
 
     public void setTelefones(List<Telefone> telefones) {
         this.telefones = telefones;
+    }
+
+    public TipoSanguineo getTipoSanguineo() {
+        return tipoSanguineo;
+    }
+
+    public void setTipoSanguineo(TipoSanguineo tipoSanguineo) {
+        this.tipoSanguineo = tipoSanguineo;
+    }
+
+    public List<ProvaEspecialidade> getProvasEspecialidades() {
+        return provasEspecialidades;
+    }
+
+    public void setProvasEspecialidades(List<ProvaEspecialidade> provasEspecialidades) {
+        this.provasEspecialidades = provasEspecialidades;
+    }
+
+    public List<ProvaEspecialidade> getInstrucaoEspecialidades() {
+        return instrucaoEspecialidades;
+    }
+
+    public void setInstrucaoEspecialidades(List<ProvaEspecialidade> instrucaoEspecialidades) {
+        this.instrucaoEspecialidades = instrucaoEspecialidades;
     }
 
     
